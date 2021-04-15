@@ -1,5 +1,3 @@
-const { now } = require('sequelize/types/lib/utils');
-
 module.exports = {
   up: async (queryInterface, Sequelize) =>
     queryInterface.bulkInsert(
