@@ -1,9 +1,17 @@
 require('dotenv/config');
 const express = require('express');
 const controllers = require('./controllers');
+const { makeCandles } = require('./helpers/makeCandles');
 const app = express();
 
 app.use(express.json());
+
+const oneMin = [];
+const fiveMin = [];
+const tenMin = [];
+setInterval(async () => {
+  makeCandles('USDT_BTC', oneMin, fiveMin, tenMin);
+}, 10000);
 
 app.use('/', controllers.candlesController);
 
