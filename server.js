@@ -14,6 +14,7 @@ setInterval(async () => {
 }, 10000);
 
 app.use('/', controllers.candlesController);
+app.use('/bitcoin', controllers.bitcoinController);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

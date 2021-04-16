@@ -2,11 +2,16 @@ const { api } = require('../services/apiPoloniex');
 const { Candles } = require('../models');
 
 const makeCandles = async (currencyPair, array, array5, array10) => {
+  // A cada 10s uma requisição é feita. Buscando o ultimo valor em que o currencyPair foi negociado.
   const quote = await api(currencyPair);
-  //   console.log('Requisição');
-  array.push(quote.last);
-  //   console.log('OneMin:', array);
 
+  // insere o valor 'last' em um array para fazer a comparação por período
+  array.push(quote.last);
+  array5.push(quote.last);
+  array10.push(quote.last);
+
+  // Cada 6 requisições formam o candle de 1min.
+  // A requisição tem um intervalo de 10s entre uma e outra.
   if (array.length === 6) {
     const candleOneMinute = {
       currency: 'Bitcoin',
@@ -18,17 +23,15 @@ const makeCandles = async (currencyPair, array, array5, array10) => {
       high: Math.max(...array),
     };
 
-    // console.log('Salvar no Banco Candle 1min: ', candleOneMinute);
+    // Salvar candle de 1 minuto no banco
     await Candles.create(candleOneMinute);
-    // console.log('Array com 6:', array);
+
     // Zerar array de 1 minuto
     array.length = 0;
-    // Inserir Candle de 1min no array de 5 minutos
-    // inserir a propriedade Close, que se refere ao close do candles de 1minuto
-    array5.push(candleOneMinute.close);
   }
 
-  if (array5.length === 5) {
+  // Cada 30 requisições temos um candle de 5min.
+  if (array5.length === 30) {
     const candleFiveMinute = {
       currency: 'Bitcoin',
       frequency: '5 minutes',
@@ -39,17 +42,15 @@ const makeCandles = async (currencyPair, array, array5, array10) => {
       high: Math.max(...array5),
     };
 
-    // console.log('salvar no banco Candle 5min: ', candleFiveMinute);
+    // Salvar candle de 5 minutos no banco
     await Candles.create(candleFiveMinute);
 
     // Zerar array de 5 minutos
     array5.length = 0;
-
-    // Inserir candle de 5 minutos no array de 10 minutos
-    array10.push(candleFiveMinute.close);
   }
 
-  if (array10.length === 2) {
+  // Cada 60 requisições temos um candle de 10min.
+  if (array10.length === 60) {
     const candleTenMinutes = {
       currency: 'Bitcoin',
       frequency: '10 minutes',
@@ -60,7 +61,7 @@ const makeCandles = async (currencyPair, array, array5, array10) => {
       high: Math.max(...array10),
     };
 
-    // console.log('salvar no banco Candle 10min: ', candleTenMinutes);
+    // Salvar candle de 10 minutos no banco
     await Candles.create(candleTenMinutes);
 
     //zerar array 10 minutos
