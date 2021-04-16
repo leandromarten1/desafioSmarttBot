@@ -13,7 +13,8 @@ setInterval(async () => {
   makeCandles('USDT_BTC', oneMin, fiveMin, tenMin);
 }, 10000);
 
-app.use('/', controllers.candlesController);
+// Implementar novas criptomoedas futuramente.
+// app.use('/', controllers.candlesController);
 app.use('/bitcoin', controllers.bitcoinController);
 
 const PORT = process.env.PORT || 3000;
