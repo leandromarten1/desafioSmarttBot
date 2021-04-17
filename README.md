@@ -60,16 +60,15 @@ $ npx sequelize db:seed:all
 
 ## Rodando a Aplicação
 
-Para rodar a aplicação:
+Para rodar a aplicação utilizando Docker:
 
 ```bash
 # Entre na pasta do projeto
 $ cd desafioSmarttBot
 
-# Inicie o Servidor
-$ npm run dev || npm start 
+# Execute o comando
+$ docker-compose up
 
-# O servidor inciará na porta:3000
 ```
 
 ## Endpoints
@@ -93,8 +92,6 @@ Retorna todos os candlesticks de 5min.
 Retorna todos os candlesticks de 10min.
 ```
 
-
-
 ## Ferramentas e tecnologias utilizadas
  - Git
  - Github
@@ -108,8 +105,8 @@ Retorna todos os candlesticks de 10min.
 
 Uma das principais dificuldades do projeto foi entender como funcionavam os candlesticks e o mercado financeiro. Para isso consultei alguns sites e assiti alguns vídeos sobre o assunto, como por exemplo: [Investing](https://br.investing.com/crypto/bitcoin/btc-usdt), [Trading View](https://br.tradingview.com/symbols/BTCUSDT/), [Bussula do Investidor](https://www.bussoladoinvestidor.com.br/grafico-de-candlestick/).
 
-Outra dificuldade foi utilizar o Docker e Docker compose. Não consegui implementar o Docker com o Sequelize a tempo de entregar o projeto.
+Um desafio foi utilizar o Docker e Docker-Compose, aconteceram alguns erros que fui corrigindo e consegui subir o projeto para os containers. Não consegui trabalhar com variáveis de ambiente, sequelize e docker juntos.
 
 ## Melhorias
 
-Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração. Utlizar Docker na aplicação 
+Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração. Melhorar a utilização de docker na aplicação
