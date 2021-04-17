@@ -32,32 +32,6 @@ $ cd desafioSmarttBot
 
 ```
 
-## Instalando as Dependencias
-
-```bash
-# Entre na pasta do projeto
-$ cd desafioSmarttBot
-
-# Instale as Dependências
-$ npm install
-
-# Insira no seu arquivo .ENV
-$ PORT=3000
-$ MYSQL_USER=seu-usuário-mysql
-$ MYSQL_PASSWORD=sua-senha-mysql
-$ SCHEMA=nome-do-banco-de-dados
-
-# Crie o banco de dados
-$ npx sequelize db:create
-
-# Rode as migrations
-$ npx sequelize db:migrate
-
-# Caso deseje popular o banco com dados ficticios
-$ npx sequelize db:seed:all
-```
-* Caso não queira popular o banco de dados, após rodar o projeto vai demorar 1min para gerar o primeiro registro(candlestick)
-
 ## Rodando a Aplicação
 
 Para rodar a aplicação utilizando Docker:
