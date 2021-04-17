@@ -103,14 +103,13 @@ Retorna todos os candlesticks de 10min.
  - ExpressJs
  - MySQL 8
  - Sequelize
- - Docker
 
 ## Desafios e dificuldades
 
 Uma das principais dificuldades do projeto foi entender como funcionavam os candlesticks e o mercado financeiro. Para isso consultei alguns sites e assiti alguns vídeos sobre o assunto, como por exemplo: [Investing](https://br.investing.com/crypto/bitcoin/btc-usdt), [Trading View](https://br.tradingview.com/symbols/BTCUSDT/), [Bussula do Investidor](https://www.bussoladoinvestidor.com.br/grafico-de-candlestick/).
 
-Um desafio foi o entender sobre Docker e Docker Compose para a utilização nesse sesafio.
+Outra dificuldade foi utilizar o Docker e Docker compose. Não consegui implementar o Docker com o Sequelize a tempo de entregar o projeto.
 
 ## Melhorias
 
-Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração.
+Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração. Utlizar Docker na aplicação 
