@@ -74,6 +74,7 @@ Retorna todos os candlesticks de 10min.
  - ExpressJs
  - MySQL 8
  - Sequelize
+ - Docker
 
 ## Desafios e dificuldades
 
