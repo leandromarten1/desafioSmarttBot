@@ -13,7 +13,7 @@ A API consumida foi a [Poloniex Public API](https://docs.poloniex.com/#public-ht
 ## Pré-requisitos
 
 Você precisa ter um sua máquina:
-[Git](https://git-scm.com/), [NodeJS](https://nodejs.org/en/), [MySQL](https://dev.mysql.com/)
+[Git](https://git-scm.com/), [Docker](https://www.docker.com/)
 
 
 ## Instalação
@@ -83,4 +83,4 @@ Um desafio foi utilizar o Docker e Docker-Compose, aconteceram alguns erros que 
 
 ## Melhorias
 
-Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração. Melhorar a utilização de docker na aplicação
+Refatoração para Python e GraphQL que hoje é utilizado na SmarttBot, implementação utilizando WebSockets, documentação utilizando Swagger e desenvolvimento de testes unitários e de integração. Melhorar a utilização de docker na aplicação e um README melhor.
